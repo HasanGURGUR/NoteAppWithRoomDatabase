@@ -20,6 +20,7 @@ import android.view.Gravity
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import hasan.gurgur.noteappwithroom.utils.Constants.BUNDLE_NOTE_ID
 import hasan.gurgur.noteappwithroom.utils.Constants.NOTE_DATABASE
 
@@ -57,9 +58,9 @@ class UpdateNoteActivity : AppCompatActivity() {
 
 
             btnDelete.setOnClickListener {
-                noteEntity = NoteEntity(noteId,defaultTitle,defaultDesc)
-                noteDB.doa().deleteNote(noteEntity)
-                finish()
+
+                showCustomAlertDialog()
+
             }
 
             btnSave.setOnClickListener {
@@ -82,5 +83,24 @@ class UpdateNoteActivity : AppCompatActivity() {
         }
     }
 
+    private fun showCustomAlertDialog(){
+
+        val builder = AlertDialog.Builder(this,R.style.CustomAlertDialog)
+            .create()
+        val view = layoutInflater.inflate(R.layout.custom_view_layout,null)
+        val negative_button = view.findViewById<Button>(R.id.dialog_neg_btn)
+        val  positive_button = view.findViewById<Button>(R.id.dialog_pos_btn)
+        builder.setView(view)
+        positive_button.setOnClickListener {
+            noteEntity = NoteEntity(noteId,defaultTitle,defaultDesc)
+            noteDB.doa().deleteNote(noteEntity)
+            finish()
+        }
+        negative_button.setOnClickListener {
+            builder.dismiss()
+        }
+        builder.setCanceledOnTouchOutside(false)
+        builder.show()
+    }
 
 }

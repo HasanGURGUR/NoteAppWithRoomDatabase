@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Android Projeler/Note App With Room DB/app/src/main/res/drawable/rounded_corner.xml" value="0.26614583333333336" />
+        <entry key="..\:/Android Projeler/Note App With Room DB/app/src/main/res/layout/custom_view_layout.xml" value="0.2" />
         <entry key="..\:/Users/Firat/AndroidProjeler/NoteAppWithRoom/app/src/main/res/layout/activity_add_note.xml" value="0.3625" />
         <entry key="..\:/Users/Firat/AndroidProjeler/NoteAppWithRoom/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/Firat/AndroidProjeler/NoteAppWithRoom/app/src/main/res/layout/activity_update_note.xml" value="0.3625" />
